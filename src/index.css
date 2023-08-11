@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,46 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Tailwind Class */
+.nav{
+  @apply relative ml-10 text-white tracking-[1px] hover:text-primary;
+}
+
+.nav::after{
+  @apply content-[''] bg-primary h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-500;
+}
+
+.nav:hover::after{
+  @apply w-[100%];
+}
+
+.hoveres{
+  @apply hidden;
+}
+
+.hovered:hover .hoveres{
+  @apply flex-colo;
+}
+
+.flex-colo{
+  @apply flex flex-col justify-center items-center;
+}
+
+.flex-rows{
+  @apply flex flex-row justify-center items-center;
+}
+
+.flex-btn{
+  @apply flex justify-between items-center;
+}
+
+.transitions{
+  @apply transition duration-200 ease-in;
 }
