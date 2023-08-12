@@ -17,7 +17,6 @@ function PopularTv() {
                     params,
                 });
                 setTvItems(response.results.slice(0,18));
-                console.log({tvList : response});
             }catch{
                 console.log("error");
             }

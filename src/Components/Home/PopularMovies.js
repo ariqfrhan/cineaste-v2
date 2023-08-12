@@ -17,7 +17,6 @@ function PopularMovies() {
           params,
         });
         setMovieItems(response.results.slice(0, 18));
-        console.log({ movieList: response });
       } catch {
         console.log("error");
       }
