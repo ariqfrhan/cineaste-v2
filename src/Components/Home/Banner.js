@@ -5,15 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Link } from "react-router-dom";
 import axios from "axios";
-import tmdbApi, { category, movieType } from "../../api/tmdbApi";
+import { category} from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion} from "framer-motion";
 
 function Banner() {
   SwiperCore.use([Autoplay]);
   const [showModal, setShowModal] = useState(false);
   const [movieItems, setMovieItems] = useState([]);
-  const [videos, setVideos] = useState([]);
   const calcInnerWidth = () => {
     const width = window.innerWidth;
     return width;
@@ -34,7 +33,6 @@ function Banner() {
 
   useEffect(() => {
     const getMovies = async () => {
-      const params = { page: 1 };
       try {
         const apiKey = apiConfig.apiKey;
         const url = `
